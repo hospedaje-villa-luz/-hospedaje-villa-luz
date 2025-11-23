@@ -41,8 +41,8 @@ body {
 
 /* ----- CONTENIDO ----- */
 main {
-    margin-left: 240px;
-    width: calc(100% - 240px);
+    margin-left: 270px; /* Ajuste para compensar el fixed sidebar */
+    width: calc(100% - 270px);
 }
 
 .topbar {

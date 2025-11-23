@@ -6,7 +6,6 @@
     <title>Hospedaje Villa Luz</title>
     <link rel="stylesheet" href="estilos.css" />
 
-    <!-- Carrusel: SwiperJS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
     .hero-mejorado {
@@ -77,7 +76,6 @@
 
     </header>
 
-    <!-- SECCIÓN DE BIENVENIDA CON CARRUSEL -->
     <section id="hero" class="hero-mejorado">
 
         <div class="swiper mySwiper">
@@ -95,7 +93,6 @@
         </div>
     </section>
 
-    <!-- FORMULARIO DE RESERVA -->
     <section id="reservas" class="card">
         <h2>Reserva con nosotros</h2>
         <form id="formReserva">
@@ -110,65 +107,7 @@
     </section>
 
     <section id="cupones" class="cupones-section">
-    <h2>🎟️ Cupones de Hospedaje Villa Luz</h2>
-    <p class="intro-cupones">
-        Hola, bienvenidos a Hospedaje Villa Luz 🌳<br>
-        Por favor indícanos tu nombre y el cupón que deseas adquirir.
-    </p>
-
-    <div class="cupones-container">
-
-        <div class="cupon-card">
-            <h3>Opción 1</h3>
-            <ul>
-                <li>1 Habitación 🛏️</li>
-                <li>1 Baño 🚽🚿</li>
-                <li>Cocina 🍽️</li>
-                <li>Parqueadero 🚗🏍️</li>
-            </ul>
-            <p class="precio">Valor: <strong>$132.000</strong></p>
-        </div>
-
-        <div class="cupon-card">
-            <h3>Opción 2</h3>
-            <ul>
-                <li>2 Habitaciones 🛏️</li>
-                <li>1 Baño 🚽🚿</li>
-                <li>Cocina 🍽️</li>
-                <li>Parqueadero 🚗🏍️</li>
-            </ul>
-            <p class="precio">Valor: <strong>$264.000</strong></p>
-        </div>
-
-        <div class="cupon-card">
-            <h3>Opción 3</h3>
-            <ul>
-                <li>1 Habitación 🛏️</li>
-                <li>Cocina 🍽️</li>
-                <li>Parqueadero 🚗🏍️</li>
-            </ul>
-            <p class="precio">Valor: <strong>$110.000</strong></p>
-        </div>
-
-        <div class="cupon-card">
-            <h3>Opción 4</h3>
-            <ul>
-                <li>3 Habitaciones 🛏️</li>
-                <li>2 Baños 🚽🚿</li>
-                <li>Cocina 🍽️</li>
-                <li>Parqueadero 🚗🏍️</li>
-            </ul>
-            <p class="precio">Valor: <strong>$374.000</strong></p>
-        </div>
-
-    </div>
-
-    <p class="info-extra">
-        📊 Los precios están establecidos en temporada alta con un 10% adicional.<br><br>
-        Todos los cupones incluyen: acceso a internet, ducha caliente y utensilios de aseo personal.<br><br>
-        ❗ Está permitido el ingreso de mascotas domesticadas.
-    </p>
-</section>
+        </section>
 
     <section id="normas" class="normas-section">
     <h2>🏡 Normas del Hospedaje Villa Luz</h2>
@@ -238,7 +177,6 @@
     </div>
 </section>
 
-    <!-- MAPA DEL SITIO -->
     <section id="mapa" class="card">
         <h2>Nuestra Ubicación</h2>
         <iframe 
@@ -296,6 +234,50 @@
         <p>© 2025 Villa Luz Hospedaje. Todos los derechos reservados.</p>
     </div>
 </footer>
+
+<script src="panel-cupones.js"></script>
+
+<script>
+function renderCuponesEnPagina() {
+    const cupones = JSON.parse(localStorage.getItem("cupones")) || [];
+    const contenedor = document.getElementById("cupones");
+
+    let cuponesHtml = `
+        <div class="cupones-container">
+    `;
+
+    cupones.forEach((c, i) => {
+        // La descripción es una lista de ítems separados por salto de línea.
+        const listaItems = c.descripcion.split('\n').map(item => `<li>${item}</li>`).join('');
+
+        cuponesHtml += `
+            <div class="cupon-card" style="opacity: ${c.activo ? 1 : 0.4}">
+                <h3>${c.titulo}</h3>
+                <ul>
+                    ${listaItems}
+                </ul>
+                <p class="precio">Valor: <strong>$${c.precio.toLocaleString()}</strong></p>
+            </div>
+        `;
+    });
+
+    cuponesHtml += `</div>
+        <p class="info-extra">
+            📊 Los precios están establecidos en temporada alta con un 10% adicional.<br><br>
+            Todos los cupones incluyen: acceso a internet, ducha caliente y utensilios de aseo personal.<br><br>
+            ❗ Está permitido el ingreso de mascotas domesticadas.
+        </p>
+    `;
+
+    // Reemplaza SÓLO el contenedor de cupones, manteniendo el título principal.
+    const tituloPrincipal = '<h2>🎟️ Cupones Disponibles</h2>';
+    contenedor.innerHTML = tituloPrincipal + cuponesHtml;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    renderCuponesEnPagina();
+});
+</script>
 
 </body>
 </html>

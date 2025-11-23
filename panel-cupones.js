@@ -1,32 +1,32 @@
 let cupones = JSON.parse(localStorage.getItem("cupones")) || [
-    {
-        titulo: "Opción 1",
-        descripcion: "1 Habitación, 1 Baño, Cocina, Parqueadero",
-        precio: 132000,
-        activo: true,
-        usados: 0
-    },
-    {
-        titulo: "Opción 2",
-        descripcion: "2 Habitaciones, 1 Baño, Cocina, Parqueadero",
-        precio: 264000,
-        activo: true,
-        usados: 0
-    },
-    {
-        titulo: "Opción 3",
-        descripcion: "1 Habitación, Cocina, Parqueadero",
-        precio: 110000,
-        activo: true,
-        usados: 0
-    },
-    {
-        titulo: "Opción 4",
-        descripcion: "3 Habitaciones, 2 Baños, Cocina, Parqueadero",
-        precio: 374000,
-        activo: true,
-        usados: 0
-    }
+  {
+    "titulo": "Opción 1",
+    "descripcion": "1 Habitación 🛏️\n1 Baño 🚽🚿\nCocina 🍽️\nParqueadero 🚗🏍️",
+    "precio": 132000,
+    "activo": true,
+    "usados": 0
+  },
+  {
+    "titulo": "Opción 2",
+    "descripcion": "2 Habitaciones 🛏️\n1 Baño 🚽🚿\nCocina 🍽️\nParqueadero 🚗🏍️",
+    "precio": 264000,
+    "activo": true,
+    "usados": 0
+  },
+  {
+    "titulo": "Opción 3",
+    "descripcion": "1 Habitación 🛏️\nCocina 🍽️\nParqueadero 🚗🏍️",
+    "precio": 110000,
+    "activo": true,
+    "usados": 0
+  },
+  {
+    "titulo": "Opción 4",
+    "descripcion": "3 Habitaciones 🛏️\n2 Baños 🚽🚿\nCocina 🍽️\nParqueadero 🚗🏍️",
+    "precio": 374000,
+    "activo": true,
+    "usados": 0
+  }
 ];
 
 let indexEdit = -1;
@@ -43,7 +43,7 @@ function cargarCupones() {
         contenedor.innerHTML += `
             <div class="cupon-card">
                 <h3>${c.titulo}</h3>
-                <p class="descripcion">${c.descripcion}</p>
+                <p class="descripcion">${c.descripcion.replace(/\n/g, "<br>")}</p>
                 <p class="precio">$${c.precio.toLocaleString()}</p>
 
                 <div class="acciones">
@@ -84,7 +84,8 @@ function cerrarModal() {
 function guardarEdicion() {
     cupones[indexEdit].titulo = document.getElementById("editTitulo").value;
     cupones[indexEdit].descripcion = document.getElementById("editDescripcion").value;
-    cupones[indexEdit].precio = parseInt(document.getElementById("editPrecio").value);
+    // Aseguramos que el precio se guarda como número
+    cupones[indexEdit].precio = parseInt(document.getElementById("editPrecio").value, 10); 
 
     guardar();
     cargarCupones();
