@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador - Villa Luz Hospedaje</title>
+
+    <link rel="stylesheet" href="panel.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h2>Villa Luz</h2>
+        <ul>
+            <li class="active">Reservas</li>
+            <li onclick="window.location.href='index.html'">Volver al inicio</li>
+            <li onclick="window.location.href='panel-cupones.html'">Cupones</li>
+
+        </ul>
+    </aside>
+
+    <main>
+        <header class="topbar">
+            <h1>Panel Administrativo</h1>
+        </header>
+
+        <section class="contenido">
+
+            <div class="form-card">
+                <h2>Agregar Reserva</h2>
+
+                <label>Nombre del Cliente:</label>
+                <input type="text" id="nombre">
+
+                <label>Fecha de Inicio:</label>
+                <input type="date" id="inicio">
+
+                <label>Fecha Final:</label>
+                <input type="date" id="final">
+
+                <button onclick="agregarReserva()">Guardar</button>
+            </div>
+
+            <div class="tabla-card">
+                <h2>Reservas Registradas</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Cliente</th>
+                            <th>Inicio</th>
+                            <th>Final</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaReservas"></tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+<script src="panel.js"></script>
+</body>
+</html>

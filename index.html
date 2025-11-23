@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospedaje Villa Luz</title>
+    <link rel="stylesheet" href="estilos.css" />
+
+    <!-- Carrusel: SwiperJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+    .hero-mejorado {
+        position: relative;
+        height: 70vh;
+        overflow: hidden;
+    }
+
+   .mySwiper img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    filter: brightness(70%);
+    position: relative;
+    z-index: 1;
+}
+
+
+    .bienvenida-texto.mejorado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* CENTRAR TEXTO */
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 12px black;
+    background: rgba(0,0,0,0.35);
+    padding: 25px 45px;
+    border-radius: 18px;
+    backdrop-filter: blur(6px);
+    animation: fadeIn 1.8s;
+    z-index: 10;
+}
+
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translate(-50%, 20px); }
+        to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    .swiper-pagination-bullet {
+        background: white;
+        opacity: 0.8;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #ffeb3b;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <a href="admin.html" class="admin-btn">⚙️</a>
+        <nav class="navbar">
+    <div class="logo-container">
+        <img src="img/logo.jpeg" alt="Logo Villa Luz Hospedaje" class="logo">
+        <span class="nombre-sitio">Hospedaje Villa Luz</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#cupones">Cupones</a></li>
+        <li><a href="#normas">Normas</a></li>
+
+    </ul>
+</nav>
+
+    </header>
+
+    <!-- SECCIÓN DE BIENVENIDA CON CARRUSEL -->
+    <section id="hero" class="hero-mejorado">
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/hospedaje fachada (1).jpeg"/></div>
+                <div class="swiper-slide"><img src="iMG/hospedaje fachada (2).jpeg"/></div>
+                <div class="swiper-slide"><img src="img/hospedaje fachada (3).jpeg"/></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="bienvenida-texto mejorado">
+            <h2>Bienvenido a Hospedaje Villa Luz</h2>
+            <p>Comodidad, descanso y una experiencia inolvidable.</p>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE RESERVA -->
+    <section id="reservas" class="card">
+        <h2>Reserva con nosotros</h2>
+        <form id="formReserva">
+            <label>Fecha de Inicio:</label>
+            <input type="date" id="fechaInicio" required />
+
+            <label>Fecha Final:</label>
+            <input type="date" id="fechaFinal" required />
+
+            <button type="submit">Reservar por WhatsApp</button>
+        </form>
+    </section>
+
+    <section id="cupones" class="cupones-section">
+    <h2>🎟️ Cupones de Hospedaje Villa Luz</h2>
+    <p class="intro-cupones">
+        Hola, bienvenidos a Hospedaje Villa Luz 🌳<br>
+        Por favor indícanos tu nombre y el cupón que deseas adquirir.
+    </p>
+
+    <div class="cupones-container">
+
+        <div class="cupon-card">
+            <h3>Opción 1</h3>
+            <ul>
+                <li>1 Habitación 🛏️</li>
+                <li>1 Baño 🚽🚿</li>
+                <li>Cocina 🍽️</li>
+                <li>Parqueadero 🚗🏍️</li>
+            </ul>
+            <p class="precio">Valor: <strong>$132.000</strong></p>
+        </div>
+
+        <div class="cupon-card">
+            <h3>Opción 2</h3>
+            <ul>
+                <li>2 Habitaciones 🛏️</li>
+                <li>1 Baño 🚽🚿</li>
+                <li>Cocina 🍽️</li>
+                <li>Parqueadero 🚗🏍️</li>
+            </ul>
+            <p class="precio">Valor: <strong>$264.000</strong></p>
+        </div>
+
+        <div class="cupon-card">
+            <h3>Opción 3</h3>
+            <ul>
+                <li>1 Habitación 🛏️</li>
+                <li>Cocina 🍽️</li>
+                <li>Parqueadero 🚗🏍️</li>
+            </ul>
+            <p class="precio">Valor: <strong>$110.000</strong></p>
+        </div>
+
+        <div class="cupon-card">
+            <h3>Opción 4</h3>
+            <ul>
+                <li>3 Habitaciones 🛏️</li>
+                <li>2 Baños 🚽🚿</li>
+                <li>Cocina 🍽️</li>
+                <li>Parqueadero 🚗🏍️</li>
+            </ul>
+            <p class="precio">Valor: <strong>$374.000</strong></p>
+        </div>
+
+    </div>
+
+    <p class="info-extra">
+        📊 Los precios están establecidos en temporada alta con un 10% adicional.<br><br>
+        Todos los cupones incluyen: acceso a internet, ducha caliente y utensilios de aseo personal.<br><br>
+        ❗ Está permitido el ingreso de mascotas domesticadas.
+    </p>
+</section>
+
+    <section id="normas" class="normas-section">
+    <h2>🏡 Normas del Hospedaje Villa Luz</h2>
+    <p class="intro-normas">
+        Para garantizar una estadía agradable, segura y respetuosa para todos nuestros huéspedes,
+        por favor tenga en cuenta las siguientes normas:
+    </p>
+
+    <div class="normas-container">
+
+        <div class="norma-card">
+            <h3>1. Ingreso de mascotas</h3>
+            <p>
+                Se permite únicamente el ingreso de perros y gatos. Los dueños deben mantener el control
+                y la limpieza de sus mascotas, evitando comportamientos que molesten a otros huéspedes.
+            </p>
+        </div>
+
+        <div class="norma-card">
+            <h3>2. Cuidado de utensilios y elementos</h3>
+            <p>
+                Los utensilios e implementos disponibles son de uso exclusivo durante su estancia.
+                Está prohibido retirarlos del hospedaje o darles un uso inapropiado.
+            </p>
+        </div>
+
+        <div class="norma-card">
+            <h3>3. Respeto por las áreas verdes</h3>
+            <p>
+                Cuide las flores, plantas y jardines del lugar. No está permitido cortar o manipular
+                plantas sin autorización del recepcionista.
+            </p>
+        </div>
+
+        <div class="norma-card">
+            <h3>4. Cuidado de productos en venta</h3>
+            <p>
+                Los productos en exhibición deben ser manipulados con precaución.
+                Para adquirir alguno, comuníquese con el recepcionista.
+            </p>
+        </div>
+
+        <div class="norma-card">
+            <h3>5. Trato respetuoso</h3>
+            <p>
+                Mantenga un comportamiento cordial hacia el personal del hospedaje e instructores,
+                así como hacia otros huéspedes.
+            </p>
+        </div>
+
+        <div class="norma-card">
+            <h3>6. Orden y limpieza</h3>
+            <p>
+                Cada huésped es responsable del orden y limpieza en todas las áreas que utilice,
+                tanto privadas como comunes.
+            </p>
+        </div>
+
+        <div class="norma-card">
+            <h3>7. Daños o alteraciones</h3>
+            <p>
+                Cualquier daño ocasionado a las instalaciones deberá ser reportado de inmediato
+                y será responsabilidad del huésped.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+    <!-- MAPA DEL SITIO -->
+    <section id="mapa" class="card">
+        <h2>Nuestra Ubicación</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1984.967297832536!2d-73.18883182929154!3d5.722561500842632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a6ff37508c795%3A0xa7c9110372be7858!2sCASA%20VILLA%20LUZ%20SOTAQUIRA!5e0!3m2!1ses-419!2sco!4v1763771326246!5m2!1ses-419!2sco" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+        </iframe>
+    </section>
+
+    <script src="reservas.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
+    <footer class="footer">
+    <div class="footer-content">
+
+        <div class="footer-section">
+            <h3>🏡 Villa Luz Hospedaje</h3>
+            <p>Comodidad, descanso y naturaleza al mejor precio.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Enlaces rápidos</h4>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#reservas">Reservas</a></li>
+                <li><a href="#cupones">Cupones</a></li>
+                <li><a href="#normas">Normas</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contacto</h4>
+            <p>📍 Ubicación: CASA VILLA LUZ SOTAQUIRA</p>
+            <p>📞 WhatsApp: +57 321 309 6656</p>
+            <p>📧 Correo: villa123luzhos@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Villa Luz Hospedaje. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+</html>
+

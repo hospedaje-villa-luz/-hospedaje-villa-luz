@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <section class="card">
+        <h2>Modo Administrador</h2>
+
+        <label>Contraseña:</label>
+        <input type="password" id="pass">
+
+        <button onclick="login()">Entrar</button>
+
+        <p id="msg" style="color:red;"></p>
+    </section>
+
+<script>
+function login(){
+    let pass = document.getElementById("pass").value;
+    if(pass === "Villaluzhospedaje25"){
+        window.location.href = "panel.html";
+    } else {
+        document.getElementById("msg").innerText = "Contraseña incorrecta";
+    }
+}
+</script>
+
+</body>
+</html>

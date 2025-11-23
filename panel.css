@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    background: #eef1f7;
+}
+
+/* ----- SIDEBAR ----- */
+.sidebar {
+    width: 230px;
+    background: #1a237e;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.sidebar li:hover,
+.sidebar .active {
+    background: white;
+    color: #1a237e;
+}
+
+/* ----- MAIN CONTENT ----- */
+main {
+    width: 100%;
+}
+
+.topbar {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.topbar h1 {
+    margin: 0;
+}
+
+.contenido {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 350px auto;
+    grid-gap: 30px;
+}
+
+/* ----- FORMULARIO ----- */
+.form-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.form-card h2 {
+    margin-top: 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #303f9f;
+}
+
+/* ----- TABLA ----- */
+.tabla-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #1a237e;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background: #f4f4f4;
+}
+
+.acciones button {
+    margin: 2px;
+    width: 95px;
+}

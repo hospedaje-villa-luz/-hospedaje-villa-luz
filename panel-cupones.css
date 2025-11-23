@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    background: #eef1f7;
+}
+
+/* ----- SIDEBAR ----- */
+.sidebar {
+    width: 230px;
+    background: #1a237e;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 14px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.sidebar .active,
+.sidebar li:hover {
+    background: #ffffff;
+    color: #1a237e;
+}
+
+/* ----- CONTENIDO ----- */
+main {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+}
+
+.topbar {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.1);
+}
+
+.cupones-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* ----- TARJETAS ----- */
+.cupon-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    transition: .3s;
+}
+
+.cupon-card:hover {
+    transform: translateY(-5px);
+}
+
+.cupon-card h3 {
+    margin: 0;
+    color: #1a237e;
+    font-size: 22px;
+}
+
+.descripcion {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.precio {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.acciones {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Switch ON/OFF */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 34px;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+input:checked + .slider {
+    background: #1a237e;
+}
+
+input:checked + .slider:before {
+    transform: translateX(27px);
+}
+
+.btn-editar {
+    background: #1a237e;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* ----- MODAL ----- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.cerrar {
+    background: #ccc;
+    margin-top: 10px;
+}
